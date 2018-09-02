@@ -9,6 +9,7 @@ import sync from "./sync";
 import onedrive from "./onedrive";
 import icloud from "./icloud";
 import b2 from "./b2";
+import sugarsync from "./sugarsync";
 
 const providers: Array<Provider> = [
   amazondrive,
@@ -19,7 +20,7 @@ const providers: Array<Provider> = [
   sync,
   onedrive,
   icloud,
-  b2
+  sugarsync
 ];
 
 export default providers;

@@ -11,7 +11,7 @@ class App extends React.Component<
 > {
   constructor(props) {
     super(props);
-    this.state = { storage: 1000 };
+    this.state = { storage: 100 };
   }
   render() {
     return (

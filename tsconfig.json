@@ -1,6 +1,11 @@
 {
     "compilerOptions": {
         "strictNullChecks": true,
-        "jsx": "React"
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "sourceMap": true,
+        "allowJs": true,
+        "moduleResolution": "node",
     }
 }

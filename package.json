@@ -2,9 +2,12 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "file-loader": "^2.0.0",
     "ts-loader": "^4.5.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3",

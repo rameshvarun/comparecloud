@@ -33,7 +33,7 @@ class App extends React.Component<
                 price = p.getYearlyPrice(this.state.storage);
               } else if (p.getMonthlyPrice) {
                 let monthlyPrice = p.getMonthlyPrice(this.state.storage);
-                if (monthlyPrice) price = 12 * monthlyPrice;
+                if (monthlyPrice !== undefined) price = 12 * monthlyPrice;
               } else {
                 throw new Error(
                   `${

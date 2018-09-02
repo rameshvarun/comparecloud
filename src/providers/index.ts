@@ -10,6 +10,7 @@ import onedrive from "./onedrive";
 import icloud from "./icloud";
 import b2 from "./b2";
 import sugarsync from "./sugarsync";
+import pcloud from "./pcloud";
 
 const providers: Array<Provider> = [
   amazondrive,
@@ -20,7 +21,8 @@ const providers: Array<Provider> = [
   sync,
   onedrive,
   icloud,
-  sugarsync
+  sugarsync,
+  pcloud
 ];
 
 export default providers;

@@ -66,7 +66,7 @@ class App extends React.Component<
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">
-                    <a href="{provider.url}">{provider.name}</a>
+                    <a href={provider.url}>{provider.name}</a>
                   </h5>
                   <p className="card-text">
                     {price == 0 && "Free"}

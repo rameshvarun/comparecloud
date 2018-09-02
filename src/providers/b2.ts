@@ -1,15 +1,12 @@
 import { GB, TB } from "../units";
+
 import Provider from "../provider";
 
 const provider: Provider = {
-  name: "Box",
-  url: "https://www.box.com/",
+  name: "Backblaze B2",
+  url: "https://www.backblaze.com/b2/cloud-storage-pricing.html",
   getMonthlyPrice(storage: number): number | undefined {
-    if (storage <= GB(10)) {
-      return 0;
-    } else if (storage <= GB(100)) {
-      return 10;
-    }
+    return storage * 0.005;
   }
 };
 

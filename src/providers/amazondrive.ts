@@ -4,6 +4,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "Amazon Drive",
+  type: "personal",
   url: "https://www.amazon.com/gp/drive/about",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

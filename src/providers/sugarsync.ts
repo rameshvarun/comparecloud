@@ -3,6 +3,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "SugarSync",
+  type: "personal",
   url: "https://www2.sugarsync.com/",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(100)) {

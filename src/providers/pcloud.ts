@@ -4,6 +4,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "pCloud",
+  type: "personal",
   url: "https://www.pcloud.com/cloud-storage-pricing-plans.html",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(20)) {

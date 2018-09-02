@@ -3,6 +3,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "OneDrive",
+  type: "personal",
   url: "https://onedrive.live.com/about/en-us/plans/",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

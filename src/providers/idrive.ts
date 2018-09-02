@@ -4,6 +4,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "IDrive",
+  type: "personal",
   url: "https://www.idrive.com/pricing",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

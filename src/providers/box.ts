@@ -3,6 +3,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "Box",
+  type: "personal",
   url: "https://www.box.com/",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(10)) {

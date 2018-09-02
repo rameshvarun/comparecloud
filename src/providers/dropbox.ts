@@ -3,6 +3,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "Dropbox",
+  type: "personal",
   url: "https://www.dropbox.com/",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(2)) {

@@ -4,6 +4,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "Google One",
+  type: "personal",
   url: "https://one.google.com/about",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(15)) {

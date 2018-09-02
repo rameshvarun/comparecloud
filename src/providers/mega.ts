@@ -5,6 +5,7 @@ import Provider from "../provider";
 const provider: Provider = {
   name: "Mega",
   url: "https://mega.nz/",
+  type: "personal",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(50)) {
       return 0;

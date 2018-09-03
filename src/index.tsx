@@ -9,6 +9,9 @@ import {
   Checkbox
 } from "react-bootstrap";
 
+// @ts-ignore: Can't type image.
+import cloudicon from "./providers/icons/generic.svg";
+
 import providers from "./providers";
 
 class App extends React.Component<
@@ -110,12 +113,12 @@ class App extends React.Component<
               <Media.ListItem>
                 <Media.Left>
                   <a href={provider.url}>
-                    <img
-                      className="media-object"
-                      width={64}
-                      height={64}
-                      src={provider.icon}
-                    />
+                      <img
+                        className="media-object"
+                        width={64}
+                        height={64}
+                        src={provider.icon || cloudicon}
+                      />
                   </a>
                 </Media.Left>
 

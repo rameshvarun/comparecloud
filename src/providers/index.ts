@@ -11,6 +11,7 @@ import icloud from "./icloud";
 import sugarsync from "./sugarsync";
 import pcloud from "./pcloud";
 import idrive from "./idrive";
+import tresorit from "./tresorit";
 
 import b2 from "./b2";
 import s3 from "./s3";
@@ -30,7 +31,8 @@ const providers: Array<Provider> = [
   idrive,
   b2,
   glacier,
-  s3
+  s3,
+  tresorit
 ];
 
 export default providers;

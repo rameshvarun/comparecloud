@@ -2,10 +2,14 @@ import { GB, TB } from "../units";
 
 import Provider from "../provider";
 
+// @ts-ignore: Can't type image.
+import icon from './icons/idrive.png';
+
 const provider: Provider = {
   name: "IDrive",
   type: "personal",
   url: "https://www.idrive.com/pricing",
+  icon,
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {
       return 0;

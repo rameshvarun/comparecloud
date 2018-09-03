@@ -2,12 +2,16 @@ import { GB, TB } from "../units";
 
 import Provider from "../provider";
 
+// @ts-ignore: Can't type image.
+import icon from './icons/s3.svg';
+
 const provider: Provider = {
-  name: "Backblaze B2",
+  name: "S3",
   type: "application",
-  url: "https://www.backblaze.com/b2/cloud-storage-pricing.html",
+  icon,
+  url: "https://aws.amazon.com/s3/pricing/",
   getMonthlyPrice(storage: number): number | undefined {
-    return storage * 0.005;
+    return storage * 0.023;
   }
 };
 

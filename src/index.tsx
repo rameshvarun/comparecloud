@@ -1,5 +1,16 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import {
+  Media,
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  InputGroup,
+  Checkbox
+} from "react-bootstrap";
+
+// @ts-ignore: Can't type image.
+import cloudicon from "./providers/icons/generic.svg";
 
 import providers from "./providers";
 
@@ -7,26 +18,62 @@ class App extends React.Component<
   {},
   {
     storage: number;
+
+    personal: boolean;
+    application: boolean;
   }
 > {
   constructor(props) {
     super(props);
-    this.state = { storage: 100 };
+    this.state = { storage: 100, personal: true, application: false };
   }
   render() {
     return (
       <div>
-        Required Storage:{" "}
-        <input
-          type="number"
-          value={this.state.storage}
-          onChange={event =>
-            this.setState({ storage: parseInt(event.target.value, 10) })
-          }
-        />{" "}
-        GB
-        <div>
+        <form>
+          <FormGroup>
+            <ControlLabel> Required Storage: </ControlLabel>
+            <InputGroup>
+              <FormControl
+                type="number"
+                value={this.state.storage}
+                onChange={event =>
+                  this.setState({ storage: parseInt(event.target.value, 10) })
+                }
+              />{" "}
+              <InputGroup.Addon>GB</InputGroup.Addon>
+            </InputGroup>
+          </FormGroup>
+
+          <FormGroup>
+            <Checkbox
+              inline
+              checked={this.state.personal}
+              onChange={event =>
+                this.setState({ personal: event.target.checked })
+              }
+            >
+              Personal
+            </Checkbox>
+            <Checkbox
+              inline
+              checked={this.state.application}
+              onChange={event =>
+                this.setState({ application: event.target.checked })
+              }
+            >
+              Application
+            </Checkbox>
+          </FormGroup>
+        </form>
+        <hr />
+        <Media.List>
           {providers
+            .filter(
+              p =>
+                (p.type === "personal" && this.state.personal) ||
+                (p.type === "application" && this.state.application)
+            )
             .map(p => {
               let price: number | undefined = undefined;
               if (p.getYearlyPrice) {
@@ -63,21 +110,30 @@ class App extends React.Component<
               return a.provider.name.localeCompare(b.provider.name);
             })
             .map(({ provider, price }) => (
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">
+              <Media.ListItem>
+                <Media.Left>
+                  <a href={provider.url}>
+                      <img
+                        className="media-object"
+                        width={64}
+                        height={64}
+                        src={provider.icon || cloudicon}
+                      />
+                  </a>
+                </Media.Left>
+
+                <Media.Body>
+                  <Media.Heading>
                     <a href={provider.url}>{provider.name}</a>
-                  </h5>
-                  <p className="card-text">
-                    {price == 0 && "Free"}
-                    {price !== undefined &&
-                      price > 0 && <span>${price.toFixed(2)} / year</span>}
-                    {price == undefined && "No plan available."}
-                  </p>
-                </div>
-              </div>
+                  </Media.Heading>
+                  {price == 0 && "Free"}
+                  {price !== undefined &&
+                    price > 0 && <span>${price.toFixed(2)} / year</span>}
+                  {price == undefined && "No plan available."}
+                </Media.Body>
+              </Media.ListItem>
             ))}
-        </div>
+        </Media.List>
       </div>
     );
   }

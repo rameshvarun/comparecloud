@@ -8,10 +8,13 @@ import mega from "./mega";
 import sync from "./sync";
 import onedrive from "./onedrive";
 import icloud from "./icloud";
-import b2 from "./b2";
 import sugarsync from "./sugarsync";
 import pcloud from "./pcloud";
 import idrive from "./idrive";
+
+import b2 from "./b2";
+import s3 from "./s3";
+import glacier from "./glacier";
 
 const providers: Array<Provider> = [
   amazondrive,
@@ -24,7 +27,10 @@ const providers: Array<Provider> = [
   icloud,
   sugarsync,
   pcloud,
-  idrive
+  idrive,
+  b2,
+  glacier,
+  s3
 ];
 
 export default providers;

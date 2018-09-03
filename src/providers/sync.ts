@@ -3,6 +3,7 @@ import Provider from "../provider";
 
 const provider: Provider = {
   name: "Sync.com",
+  type: "personal",
   url: "https://www.sync.com/",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

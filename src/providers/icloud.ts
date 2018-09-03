@@ -1,8 +1,13 @@
 import { GB, TB } from "../units";
 import Provider from "../provider";
 
+// @ts-ignore: Can't type image.
+import icon from './icons/icloud.png';
+
 const provider: Provider = {
   name: "iCloud",
+  type: "personal",
+  icon,
   url: "https://support.apple.com/en-us/HT201238",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

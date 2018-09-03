@@ -110,7 +110,7 @@ class App extends React.Component<
               return a.provider.name.localeCompare(b.provider.name);
             })
             .map(({ provider, price }) => (
-              <Media.ListItem>
+              <Media.ListItem key={provider.name}>
                 <Media.Left>
                   <a href={provider.url}>
                       <img

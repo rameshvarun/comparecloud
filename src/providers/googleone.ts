@@ -2,9 +2,13 @@ import { GB, TB } from "../units";
 
 import Provider from "../provider";
 
+// @ts-ignore: Can't type image.
+import icon from './icons/googleone.png';
+
 const provider: Provider = {
   name: "Google One",
   type: "personal",
+  icon,
   url: "https://one.google.com/about",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(15)) {

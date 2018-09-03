@@ -8,6 +8,9 @@ const provider: Provider = {
   name: "OneDrive",
   type: "personal",
   icon,
+  features: {
+    rclone: true
+  },
   url: "https://onedrive.live.com/about/en-us/plans/",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

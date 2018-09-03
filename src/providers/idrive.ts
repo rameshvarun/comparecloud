@@ -10,6 +10,9 @@ const provider: Provider = {
   type: "personal",
   url: "https://www.idrive.com/pricing",
   icon,
+  features: {
+    rclone: false
+  },
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {
       return 0;

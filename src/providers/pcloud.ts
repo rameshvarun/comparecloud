@@ -9,6 +9,9 @@ const provider: Provider = {
   name: "pCloud",
   type: "personal",
   icon,
+  features: {
+    rclone: true
+  },
   url: "https://www.pcloud.com/cloud-storage-pricing-plans.html",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(20)) {

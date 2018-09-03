@@ -8,6 +8,9 @@ const provider: Provider = {
   name: "Sync.com",
   type: "personal",
   icon,
+  features: {
+    rclone: false
+  },
   url: "https://www.sync.com/",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

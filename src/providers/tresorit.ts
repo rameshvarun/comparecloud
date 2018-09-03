@@ -8,6 +8,9 @@ const provider: Provider = {
   name: "Tresorit",
   type: "personal",
   icon,
+  features: {
+    rclone: false
+  },
   url: "https://tresorit.com/pricing",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(200)) {

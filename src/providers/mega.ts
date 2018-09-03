@@ -10,6 +10,9 @@ const provider: Provider = {
   url: "https://mega.nz/",
   type: "personal",
   icon,
+  features: {
+    rclone: true
+  },
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(50)) {
       return 0;

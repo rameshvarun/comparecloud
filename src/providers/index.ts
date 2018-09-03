@@ -12,6 +12,7 @@ import sugarsync from "./sugarsync";
 import pcloud from "./pcloud";
 import idrive from "./idrive";
 import tresorit from "./tresorit";
+import mediafire from "./mediafire";
 
 import b2 from "./b2";
 import s3 from "./s3";
@@ -32,7 +33,8 @@ const providers: Array<Provider> = [
   b2,
   glacier,
   s3,
-  tresorit
+  tresorit,
+  mediafire
 ];
 
 export default providers;

@@ -8,6 +8,9 @@ const provider: Provider = {
   name: "iCloud",
   type: "personal",
   icon,
+  features: {
+    rclone: false
+  },
   url: "https://support.apple.com/en-us/HT201238",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

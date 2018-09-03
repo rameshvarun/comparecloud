@@ -1,24 +1,20 @@
 import { GB, TB } from "../units";
 import Provider from "../provider";
 
-// @ts-ignore: Can't type image.
-import icon from './icons/dropbox.svg';
-
 const provider: Provider = {
-  name: "Dropbox",
+  name: "Mediafire",
   type: "personal",
-  icon,
+  url: "https://www.mediafire.com/upgrade/",
   features: {
-    rclone: true
+    rclone: false
   },
-  url: "https://www.dropbox.com/",
   getYearlyPrice(storage: number): number | undefined {
-    if (storage <= GB(2)) {
+    if (storage <= GB(10)) {
       return 0;
     } else if (storage <= TB(1)) {
-      return 8.25 * 12;
-    } else if (storage <= TB(2)) {
-      return 16.58 * 12;
+      return 7.50 * 12;
+    } else if (storage <= TB(100)) {
+      return 80 * 12;
     }
   }
 };

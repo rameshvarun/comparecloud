@@ -9,6 +9,9 @@ const provider: Provider = {
   name: "Google One",
   type: "personal",
   icon,
+  features: {
+    rclone: true
+  },
   url: "https://one.google.com/about",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(15)) {

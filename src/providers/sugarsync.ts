@@ -8,6 +8,9 @@ const provider: Provider = {
   name: "SugarSync",
   type: "personal",
   icon,
+  features: {
+    rclone: false
+  },
   url: "https://www2.sugarsync.com/",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(100)) {

@@ -9,6 +9,9 @@ const provider: Provider = {
   name: "Glacier",
   type: "application",
   icon,
+  features: {
+    rclone: false
+  },
   url: "https://aws.amazon.com/glacier/pricing/",
   getMonthlyPrice(storage: number): number | undefined {
     return storage * 0.004;

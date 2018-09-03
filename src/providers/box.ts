@@ -8,6 +8,9 @@ const provider: Provider = {
   name: "Box",
   type: "personal",
   icon,
+  features: {
+    rclone: true
+  },
   url: "https://www.box.com/",
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(10)) {

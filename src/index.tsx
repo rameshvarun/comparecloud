@@ -14,6 +14,17 @@ import cloudicon from "./providers/icons/generic.svg";
 
 import providers from "./providers";
 
+const FeatureCheckmark = props => (
+  <div style={{color: props.checked ? 'green' : 'red'}}>
+    {props.checked ? (
+      <span className="glyphicon glyphicon-ok" aria-hidden="true" />
+    ) : (
+      <span className="glyphicon glyphicon-remove" aria-hidden="true" />
+    )}
+    <span> {props.feature}</span>
+  </div>
+);
+
 class App extends React.Component<
   {},
   {
@@ -30,7 +41,6 @@ class App extends React.Component<
   render() {
     return (
       <div>
-        <form>
           <FormGroup>
             <ControlLabel> Required Storage: </ControlLabel>
             <InputGroup>
@@ -65,7 +75,6 @@ class App extends React.Component<
               Application
             </Checkbox>
           </FormGroup>
-        </form>
         <hr />
         <Media.List>
           {providers
@@ -113,12 +122,12 @@ class App extends React.Component<
               <Media.ListItem key={provider.name}>
                 <Media.Left>
                   <a href={provider.url}>
-                      <img
-                        className="media-object"
-                        width={64}
-                        height={64}
-                        src={provider.icon || cloudicon}
-                      />
+                    <img
+                      className="media-object"
+                      width={64}
+                      height={64}
+                      src={provider.icon || cloudicon}
+                    />
                   </a>
                 </Media.Left>
 
@@ -126,10 +135,13 @@ class App extends React.Component<
                   <Media.Heading>
                     <a href={provider.url}>{provider.name}</a>
                   </Media.Heading>
-                  {price == 0 && "Free"}
-                  {price !== undefined &&
-                    price > 0 && <span>${price.toFixed(2)} / year</span>}
-                  {price == undefined && "No plan available."}
+                  <div>
+                    {price == 0 && "Free"}
+                    {price !== undefined &&
+                      price > 0 && <span>${price.toFixed(2)} / year</span>}
+                    {price == undefined && "No plan available."}
+                  </div>
+                  <FeatureCheckmark checked={provider.features.rclone} feature="Rclone Support"/>
                 </Media.Body>
               </Media.ListItem>
             ))}

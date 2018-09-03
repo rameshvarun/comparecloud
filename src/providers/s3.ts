@@ -9,6 +9,9 @@ const provider: Provider = {
   name: "S3",
   type: "application",
   icon,
+  features: {
+    rclone: true
+  },
   url: "https://aws.amazon.com/s3/pricing/",
   getMonthlyPrice(storage: number): number | undefined {
     return storage * 0.023;

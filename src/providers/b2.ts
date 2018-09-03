@@ -5,6 +5,9 @@ import Provider from "../provider";
 const provider: Provider = {
   name: "Backblaze B2",
   type: "application",
+  features: {
+    rclone: true
+  },
   url: "https://www.backblaze.com/b2/cloud-storage-pricing.html",
   getMonthlyPrice(storage: number): number | undefined {
     return storage * 0.005;

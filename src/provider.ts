@@ -4,6 +4,10 @@ export default interface Provider {
   readonly type: "personal" | "business" | "application";
   readonly icon?: string;
 
+  readonly features: {
+    rclone: boolean;
+  };
+
   getMonthlyPrice?: (storage: number) => number | undefined;
   getYearlyPrice?: (storage: number) => number | undefined;
 }

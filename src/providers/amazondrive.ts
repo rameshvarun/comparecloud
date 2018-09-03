@@ -9,6 +9,9 @@ const provider: Provider = {
   name: "Amazon Drive",
   type: "personal",
   icon,
+  features: {
+    rclone: true
+  },
   url: "https://www.amazon.com/gp/drive/about",
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

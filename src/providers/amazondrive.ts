@@ -3,7 +3,7 @@ import { GB, TB } from "../units";
 import Provider from "../provider";
 
 // @ts-ignore: Can't type image.
-import icon from './icons/amazondrive.jpg';
+import icon from "./icons/amazondrive.jpg";
 
 const provider: Provider = {
   name: "Amazon Drive",

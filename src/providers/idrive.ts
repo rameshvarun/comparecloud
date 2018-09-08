@@ -3,7 +3,7 @@ import { GB, TB } from "../units";
 import Provider from "../provider";
 
 // @ts-ignore: Can't type image.
-import icon from './icons/idrive.png';
+import icon from "./icons/idrive.png";
 
 const provider: Provider = {
   name: "IDrive",

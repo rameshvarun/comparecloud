@@ -12,7 +12,7 @@ const provider: Provider = {
     if (storage <= GB(10)) {
       return 0;
     } else if (storage <= TB(1)) {
-      return 7.50 * 12;
+      return 7.5 * 12;
     } else if (storage <= TB(100)) {
       return 80 * 12;
     }

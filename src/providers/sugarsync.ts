@@ -2,7 +2,7 @@ import { GB, TB } from "../units";
 import Provider from "../provider";
 
 // @ts-ignore: Can't type image.
-import icon from './icons/sugarsync.png';
+import icon from "./icons/sugarsync.png";
 
 const provider: Provider = {
   name: "SugarSync",

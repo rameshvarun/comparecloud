@@ -15,7 +15,7 @@ import cloudicon from "./providers/icons/generic.svg";
 import providers from "./providers";
 
 const FeatureCheckmark = props => (
-  <div style={{color: props.checked ? 'green' : 'red'}}>
+  <div style={{ color: props.checked ? "green" : "red" }}>
     {props.checked ? (
       <span className="glyphicon glyphicon-ok" aria-hidden="true" />
     ) : (
@@ -41,40 +41,40 @@ export class App extends React.Component<
   render() {
     return (
       <div>
-          <FormGroup>
-            <ControlLabel> Required Storage: </ControlLabel>
-            <InputGroup>
-              <FormControl
-                type="number"
-                value={this.state.storage}
-                onChange={event =>
-                  this.setState({ storage: parseInt(event.target.value, 10) })
-                }
-              />{" "}
-              <InputGroup.Addon>GB</InputGroup.Addon>
-            </InputGroup>
-          </FormGroup>
+        <FormGroup>
+          <ControlLabel> Required Storage: </ControlLabel>
+          <InputGroup>
+            <FormControl
+              type="number"
+              value={this.state.storage}
+              onChange={event =>
+                this.setState({ storage: parseInt(event.target.value, 10) })
+              }
+            />{" "}
+            <InputGroup.Addon>GB</InputGroup.Addon>
+          </InputGroup>
+        </FormGroup>
 
-          <FormGroup>
-            <Checkbox
-              inline
-              checked={this.state.personal}
-              onChange={event =>
-                this.setState({ personal: event.target.checked })
-              }
-            >
-              Personal
-            </Checkbox>
-            <Checkbox
-              inline
-              checked={this.state.application}
-              onChange={event =>
-                this.setState({ application: event.target.checked })
-              }
-            >
-              Application
-            </Checkbox>
-          </FormGroup>
+        <FormGroup>
+          <Checkbox
+            inline
+            checked={this.state.personal}
+            onChange={event =>
+              this.setState({ personal: event.target.checked })
+            }
+          >
+            Personal
+          </Checkbox>
+          <Checkbox
+            inline
+            checked={this.state.application}
+            onChange={event =>
+              this.setState({ application: event.target.checked })
+            }
+          >
+            Application
+          </Checkbox>
+        </FormGroup>
         <hr />
         <Media.List>
           {providers
@@ -141,7 +141,10 @@ export class App extends React.Component<
                       price > 0 && <span>${price.toFixed(2)} / year</span>}
                     {price == undefined && "No plan available."}
                   </div>
-                  <FeatureCheckmark checked={provider.features.rclone} feature="Rclone Support"/>
+                  <FeatureCheckmark
+                    checked={provider.features.rclone}
+                    feature="Rclone Support"
+                  />
                 </Media.Body>
               </Media.ListItem>
             ))}

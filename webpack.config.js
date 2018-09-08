@@ -30,6 +30,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: '!!prerender-loader?string!src/index.html',
-    })
+      favicon: 'src/favicon.ico'
+    }),
   ]
 };

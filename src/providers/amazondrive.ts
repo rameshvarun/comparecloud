@@ -10,7 +10,7 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: true
+    rclone: { support: "supported" }
   },
   url: "https://www.amazon.com/gp/drive/about",
   getYearlyPrice(storage: number): number | undefined {

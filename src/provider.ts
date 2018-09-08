@@ -1,3 +1,5 @@
+import {FeatureSupport} from './features';
+
 export default interface Provider {
   readonly name: string;
   readonly url: string;
@@ -5,7 +7,7 @@ export default interface Provider {
   readonly icon?: string;
 
   readonly features: {
-    rclone: boolean;
+    rclone: FeatureSupport;
   };
 
   getMonthlyPrice?: (storage: number) => number | undefined;

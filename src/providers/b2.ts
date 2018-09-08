@@ -6,7 +6,7 @@ const provider: Provider = {
   name: "Backblaze B2",
   type: "application",
   features: {
-    rclone: true
+    rclone: { support: "supported" }
   },
   url: "https://www.backblaze.com/b2/cloud-storage-pricing.html",
   getMonthlyPrice(storage: number): number | undefined {

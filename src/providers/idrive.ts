@@ -1,6 +1,6 @@
 import { GB, TB } from "../units";
-
 import Provider from "../provider";
+import { Unsupported } from "../features";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/idrive.png";
@@ -11,7 +11,7 @@ const provider: Provider = {
   url: "https://www.idrive.com/pricing",
   icon,
   features: {
-    rclone: false
+    rclone: Unsupported()
   },
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(5)) {

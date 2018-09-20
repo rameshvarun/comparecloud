@@ -4,13 +4,14 @@ import Provider from "../provider";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/pcloud.svg";
+import { Supported } from "../features";
 
 const provider: Provider = {
   name: "pCloud",
   type: "personal",
   icon,
   features: {
-    rclone: true
+    rclone: Supported()
   },
   url: "https://www.pcloud.com/cloud-storage-pricing-plans.html",
   getYearlyPrice(storage: number): number | undefined {

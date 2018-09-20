@@ -1,22 +1,29 @@
-export interface Supported {
+export interface FeatureSupported {
   support: "supported";
 }
 
-export interface Unsupported {
+export interface FeatureUnsupported {
   support: "unsupported";
 }
 
-export interface PartiallySupported {
+export interface FeaturePartiallySupported {
   support: "partiallysupported";
   description: string;
 }
 
-export interface Unknown {
-  support: "unknown";
+export type FeatureSupport =
+  | FeatureSupported
+  | FeatureUnsupported
+  | FeaturePartiallySupported;
+
+export function Supported(): FeatureSupported {
+  return { support: "supported" };
 }
 
-export type FeatureSupport =
-  | Supported
-  | Unsupported
-  | PartiallySupported
-  | Unknown;
+export function Unsupported(): FeatureUnsupported {
+  return { support: "unsupported" };
+}
+
+export function PartiallySupported(description): FeaturePartiallySupported {
+  return { support: "partiallysupported", description };
+}

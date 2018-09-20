@@ -1,12 +1,12 @@
 import { GB, TB } from "../units";
-
 import Provider from "../provider";
+import { Supported } from "../features";
 
 const provider: Provider = {
   name: "Backblaze B2",
   type: "application",
   features: {
-    rclone: { support: "supported" }
+    rclone: Supported()
   },
   url: "https://www.backblaze.com/b2/cloud-storage-pricing.html",
   getMonthlyPrice(storage: number): number | undefined {

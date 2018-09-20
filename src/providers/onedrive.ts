@@ -3,13 +3,14 @@ import Provider from "../provider";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/onedrive.svg";
+import { Supported } from "../features";
 
 const provider: Provider = {
   name: "OneDrive",
   type: "personal",
   icon,
   features: {
-    rclone: true
+    rclone: Supported()
   },
   url: "https://onedrive.live.com/about/en-us/plans/",
   getYearlyPrice(storage: number): number | undefined {

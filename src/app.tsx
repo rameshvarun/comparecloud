@@ -6,24 +6,62 @@ import {
   ControlLabel,
   FormControl,
   InputGroup,
-  Checkbox
+  Checkbox,
+  OverlayTrigger,
+  Tooltip
 } from "react-bootstrap";
 
 // @ts-ignore: Can't type image.
 import cloudicon from "./providers/icons/generic.svg";
 
 import providers from "./providers";
+import { FeatureSupport } from "./features";
 
-const FeatureCheckmark = props => (
-  <div style={{ color: props.checked ? "green" : "red" }}>
-    {props.checked ? (
-      <span className="glyphicon glyphicon-ok" aria-hidden="true" />
-    ) : (
-      <span className="glyphicon glyphicon-remove" aria-hidden="true" />
-    )}
-    <span> {props.feature}</span>
-  </div>
-);
+function getSupportColor(feature: FeatureSupport): string {
+  if (feature.support === "supported") return "green";
+  else if (feature.support === "unsupported") return "red";
+  else if (feature.support === "partiallysupported") return "orange";
+  throw new Error(`Unknown feature type.`);
+}
+
+function getSupportIcon(feature: FeatureSupport): string {
+  if (feature.support === "supported") return "glyphicon-ok-sign";
+  else if (feature.support === "unsupported") return "glyphicon-remove-sign";
+  else if (feature.support === "partiallysupported")
+    return "glyphicon-question-sign";
+  throw new Error(`Unknown feature type.`);
+}
+
+function getSupportTooltip(feature: FeatureSupport) {
+  return null;
+}
+
+const FeatureCheckmark = props => {
+  let label = (
+    <div
+      style={{ color: getSupportColor(props.support), display: "inline-block" }}
+    >
+      <span
+        className={"glyphicon " + getSupportIcon(props.support)}
+        aria-hidden="true"
+      />
+      <span> {props.feature}</span>
+    </div>
+  );
+
+  if (props.support.support === "partiallysupported") {
+    return (
+      <OverlayTrigger
+        placement="right"
+        overlay={<Tooltip>{props.support.description}</Tooltip>}
+      >
+        {label}
+      </OverlayTrigger>
+    );
+  } else {
+    return label;
+  }
+};
 
 export class App extends React.Component<
   {},
@@ -142,7 +180,7 @@ export class App extends React.Component<
                     {price == undefined && "No plan available."}
                   </div>
                   <FeatureCheckmark
-                    checked={provider.features.rclone}
+                    support={provider.features.rclone}
                     feature="Rclone Support"
                   />
                 </Media.Body>

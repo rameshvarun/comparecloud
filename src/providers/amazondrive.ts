@@ -1,6 +1,6 @@
 import { GB, TB } from "../units";
-
 import Provider from "../provider";
+import { PartiallySupported } from "../features";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/amazondrive.jpg";
@@ -10,7 +10,9 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: { support: "supported" }
+    rclone: PartiallySupported(
+      "The Amazon Drive developer program has closed. Unless you already have keys, you will be unable to use RClone with Amazon Drive."
+    )
   },
   url: "https://www.amazon.com/gp/drive/about",
   getYearlyPrice(storage: number): number | undefined {

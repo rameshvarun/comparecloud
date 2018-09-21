@@ -12,7 +12,8 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write src/**/*.ts && prettier --write src/**/*.tsx"
+    "format": "prettier --write src/**/*.ts && prettier --write src/**/*.tsx",
+    "build": "webpack"
   },
   "devDependencies": {
     "@types/react": "^16.4.13",

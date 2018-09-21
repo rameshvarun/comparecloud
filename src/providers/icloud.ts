@@ -17,7 +17,8 @@ const provider: Provider = {
       android: false,
       iOS: true,
       linux: false
-    }
+    },
+    videoPreviews: Unsupported()
   },
   url: "https://support.apple.com/en-us/HT201238",
   getMonthlyPrice(storage: number): number | undefined {

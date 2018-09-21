@@ -1,6 +1,7 @@
 import { GB, TB } from "../units";
 
 import Provider from "../provider";
+import { Supported } from "../features";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/googleone.png";
@@ -10,7 +11,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: true
+    rclone: Supported(),
+    videoPreviews: Supported()
   },
   url: "https://one.google.com/about",
   getYearlyPrice(storage: number): number | undefined {

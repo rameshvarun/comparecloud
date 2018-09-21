@@ -1,12 +1,18 @@
 import { GB, TB } from "../units";
 import Provider from "../provider";
+import { Unsupported } from "../features";
+
+// @ts-ignore: Can't type image.
+import icon from "./icons/mediafire.png";
 
 const provider: Provider = {
   name: "Mediafire",
   type: "personal",
+  icon,
   url: "https://www.mediafire.com/upgrade/",
   features: {
-    rclone: false
+    rclone: Unsupported(),
+    videoPreviews: Unsupported()
   },
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(10)) {

@@ -1,5 +1,6 @@
 import { GB, TB } from "../units";
 import Provider from "../provider";
+import { Supported } from "../features";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/dropbox.svg";
@@ -9,7 +10,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: true
+    rclone: Supported(),
+    videoPreviews: Supported()
   },
   url: "https://www.dropbox.com/",
   getYearlyPrice(storage: number): number | undefined {

@@ -6,7 +6,9 @@
     "react-dom": "^16.4.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src/**/*.ts && prettier --write src/**/*.tsx"
   },
   "devDependencies": {
     "@types/react": "^16.4.13",

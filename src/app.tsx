@@ -17,6 +17,15 @@ import cloudicon from "./providers/icons/generic.svg";
 import providers from "./providers";
 import { FeatureSupport } from "./features";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinux,
+  faWindows,
+  faAndroid,
+  faApple,
+  faAppStoreIos
+} from "@fortawesome/free-brands-svg-icons";
+
 function getSupportColor(feature: FeatureSupport | undefined): string {
   if (!feature) return "grey";
   else if (feature.support === "supported") return "green";
@@ -67,6 +76,16 @@ const FeatureCheckmark: React.SFC<{
     return label;
   }
 };
+
+const PlatformIcon = props => (
+  <FontAwesomeIcon
+    style={{
+      marginRight: 5
+    }}
+    icon={props.icon}
+    size="lg"
+  />
+);
 
 export class App extends React.Component<
   {},
@@ -194,6 +213,25 @@ export class App extends React.Component<
                       feature="Video Previews"
                     />
                   </div>
+                  {provider.features.platforms && (
+                    <div>
+                      {provider.features.platforms.windows && (
+                        <PlatformIcon icon={faWindows} />
+                      )}
+                      {provider.features.platforms.macOS && (
+                        <PlatformIcon icon={faApple} />
+                      )}
+                      {provider.features.platforms.linux && (
+                        <PlatformIcon icon={faLinux} />
+                      )}
+                      {provider.features.platforms.android && (
+                        <PlatformIcon icon={faAndroid} />
+                      )}
+                      {provider.features.platforms.iOS && (
+                        <PlatformIcon icon={faAppStoreIos} />
+                      )}
+                    </div>
+                  )}
                 </Media.Body>
               </Media.ListItem>
             ))}

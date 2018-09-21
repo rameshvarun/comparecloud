@@ -10,7 +10,14 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Unsupported()
+    rclone: Unsupported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      linux: false,
+      android: true,
+      iOS: true
+    }
   },
   url: "https://www2.sugarsync.com/",
   getMonthlyPrice(storage: number): number | undefined {

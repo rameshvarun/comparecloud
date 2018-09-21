@@ -12,7 +12,14 @@ const provider: Provider = {
   url: "https://www.mediafire.com/upgrade/",
   features: {
     rclone: Unsupported(),
-    videoPreviews: Unsupported()
+    videoPreviews: Unsupported(),
+    platforms: {
+      windows: false,
+      macOS: false,
+      linux: false,
+      android: true,
+      iOS: true
+    }
   },
   getYearlyPrice(storage: number): number | undefined {
     if (storage <= GB(10)) {

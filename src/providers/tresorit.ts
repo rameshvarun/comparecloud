@@ -10,7 +10,14 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Unsupported()
+    rclone: Unsupported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      android: true,
+      iOS: true,
+      linux: true
+    }
   },
   url: "https://tresorit.com/pricing",
   getYearlyPrice(storage: number): number | undefined {

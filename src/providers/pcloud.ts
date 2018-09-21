@@ -12,7 +12,14 @@ const provider: Provider = {
   icon,
   features: {
     rclone: Supported(),
-    videoPreviews: Supported()
+    videoPreviews: Supported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      android: true,
+      iOS: true,
+      linux: true
+    }
   },
   url: "https://www.pcloud.com/cloud-storage-pricing-plans.html",
   getYearlyPrice(storage: number): number | undefined {

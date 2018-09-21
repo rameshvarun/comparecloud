@@ -12,7 +12,14 @@ const provider: Provider = {
   icon,
   features: {
     rclone: Supported(),
-    videoPreviews: Supported()
+    videoPreviews: Supported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      linux: true,
+      android: true,
+      iOS: true
+    }
   },
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(50)) {

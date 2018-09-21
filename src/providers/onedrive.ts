@@ -11,7 +11,14 @@ const provider: Provider = {
   icon,
   features: {
     rclone: Supported(),
-    videoPreviews: Supported()
+    videoPreviews: Supported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      android: true,
+      iOS: true,
+      linux: false
+    }
   },
   url: "https://onedrive.live.com/about/en-us/plans/",
   getYearlyPrice(storage: number): number | undefined {

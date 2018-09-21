@@ -11,7 +11,14 @@ const provider: Provider = {
   icon,
   features: {
     rclone: Supported(),
-    videoPreviews: Unsupported()
+    videoPreviews: Unsupported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      android: true,
+      iOS: true,
+      linux: false
+    }
   },
   url: "https://www.box.com/",
   getMonthlyPrice(storage: number): number | undefined {

@@ -9,6 +9,15 @@ export default interface Provider {
   readonly features: {
     rclone: FeatureSupport;
     videoPreviews?: FeatureSupport;
+
+    platforms?: {
+      windows: boolean;
+      macOS: boolean;
+      linux: boolean;
+
+      android: boolean;
+      iOS: boolean;
+    };
   };
 
   getMonthlyPrice?: (storage: number) => number | undefined;

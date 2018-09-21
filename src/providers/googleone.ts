@@ -12,7 +12,14 @@ const provider: Provider = {
   icon,
   features: {
     rclone: Supported(),
-    videoPreviews: Supported()
+    videoPreviews: Supported(),
+    platforms: {
+      windows: true,
+      macOS: true,
+      android: true,
+      iOS: true,
+      linux: false
+    }
   },
   url: "https://one.google.com/about",
   getYearlyPrice(storage: number): number | undefined {

@@ -15,7 +15,14 @@ const provider: Provider = {
     ),
     videoPreviews: PartiallySupported(
       "Only videos less than 20 minutes in length and smaller than 2 GB can be streamed."
-    )
+    ),
+    platforms: {
+      windows: true,
+      macOS: true,
+      android: true,
+      iOS: true,
+      linux: false
+    }
   },
   url: "https://www.amazon.com/gp/drive/about",
   getYearlyPrice(storage: number): number | undefined {

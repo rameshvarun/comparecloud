@@ -11,7 +11,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Supported()
+    rclone: Supported(),
+    videoPreviews: Supported()
   },
   url: "https://one.google.com/about",
   getYearlyPrice(storage: number): number | undefined {

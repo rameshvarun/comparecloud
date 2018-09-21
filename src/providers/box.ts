@@ -1,6 +1,6 @@
 import { GB, TB } from "../units";
 import Provider from "../provider";
-import { Supported } from "../features";
+import { Supported, Unsupported } from "../features";
 
 // @ts-ignore: Can't type image.
 import icon from "./icons/box.png";
@@ -10,7 +10,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Supported()
+    rclone: Supported(),
+    videoPreviews: Unsupported()
   },
   url: "https://www.box.com/",
   getMonthlyPrice(storage: number): number | undefined {

@@ -17,29 +17,34 @@ import cloudicon from "./providers/icons/generic.svg";
 import providers from "./providers";
 import { FeatureSupport } from "./features";
 
-function getSupportColor(feature: FeatureSupport): string {
-  if (feature.support === "supported") return "green";
+function getSupportColor(feature: FeatureSupport | undefined): string {
+  if (!feature) return "grey";
+  else if (feature.support === "supported") return "green";
   else if (feature.support === "unsupported") return "red";
   else if (feature.support === "partiallysupported") return "orange";
   throw new Error(`Unknown feature type.`);
 }
 
-function getSupportIcon(feature: FeatureSupport): string {
-  if (feature.support === "supported") return "glyphicon-ok-sign";
+function getSupportIcon(feature: FeatureSupport | undefined): string {
+  if (!feature) return "glyphicon-question-sign";
+  else if (feature.support === "supported") return "glyphicon-ok-sign";
   else if (feature.support === "unsupported") return "glyphicon-remove-sign";
   else if (feature.support === "partiallysupported")
     return "glyphicon-question-sign";
   throw new Error(`Unknown feature type.`);
 }
 
-function getSupportTooltip(feature: FeatureSupport) {
-  return null;
-}
-
-const FeatureCheckmark = props => {
+const FeatureCheckmark: React.SFC<{
+  support: FeatureSupport | undefined;
+  feature: string;
+}> = props => {
   let label = (
     <div
-      style={{ color: getSupportColor(props.support), display: "inline-block" }}
+      style={{
+        color: getSupportColor(props.support),
+        display: "inline-block",
+        marginRight: 10
+      }}
     >
       <span
         className={"glyphicon " + getSupportIcon(props.support)}
@@ -49,10 +54,10 @@ const FeatureCheckmark = props => {
     </div>
   );
 
-  if (props.support.support === "partiallysupported") {
+  if (props.support && props.support.support === "partiallysupported") {
     return (
       <OverlayTrigger
-        placement="right"
+        placement="top"
         overlay={<Tooltip>{props.support.description}</Tooltip>}
       >
         {label}
@@ -179,10 +184,16 @@ export class App extends React.Component<
                       price > 0 && <span>${price.toFixed(2)} / year</span>}
                     {price == undefined && "No plan available."}
                   </div>
-                  <FeatureCheckmark
-                    support={provider.features.rclone}
-                    feature="Rclone Support"
-                  />
+                  <div style={{ flexDirection: "row", flexWrap: "wrap" }}>
+                    <FeatureCheckmark
+                      support={provider.features.rclone}
+                      feature="Rclone Support"
+                    />
+                    <FeatureCheckmark
+                      support={provider.features.videoPreviews}
+                      feature="Video Previews"
+                    />
+                  </div>
                 </Media.Body>
               </Media.ListItem>
             ))}

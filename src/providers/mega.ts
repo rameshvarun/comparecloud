@@ -11,7 +11,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Supported()
+    rclone: Supported(),
+    videoPreviews: Supported()
   },
   getMonthlyPrice(storage: number): number | undefined {
     if (storage <= GB(50)) {

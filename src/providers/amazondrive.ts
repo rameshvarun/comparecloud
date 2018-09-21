@@ -12,6 +12,9 @@ const provider: Provider = {
   features: {
     rclone: PartiallySupported(
       "The Amazon Drive developer program has closed. Unless you already have keys, you will be unable to use RClone with Amazon Drive."
+    ),
+    videoPreviews: PartiallySupported(
+      "Only videos less than 20 minutes in length and smaller than 2 GB can be streamed."
     )
   },
   url: "https://www.amazon.com/gp/drive/about",

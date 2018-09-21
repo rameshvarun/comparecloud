@@ -10,7 +10,8 @@ const provider: Provider = {
   type: "application",
   icon,
   features: {
-    rclone: Unsupported()
+    rclone: Unsupported(),
+    videoPreviews: Unsupported()
   },
   url: "https://aws.amazon.com/glacier/pricing/",
   getMonthlyPrice(storage: number): number | undefined {

@@ -11,7 +11,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Supported()
+    rclone: Supported(),
+    videoPreviews: Supported()
   },
   url: "https://www.pcloud.com/cloud-storage-pricing-plans.html",
   getYearlyPrice(storage: number): number | undefined {

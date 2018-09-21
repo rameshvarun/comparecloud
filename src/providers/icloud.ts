@@ -10,7 +10,8 @@ const provider: Provider = {
   type: "personal",
   icon,
   features: {
-    rclone: Unsupported()
+    rclone: Unsupported(),
+    videoPreviews: Unsupported()
   },
   url: "https://support.apple.com/en-us/HT201238",
   getMonthlyPrice(storage: number): number | undefined {

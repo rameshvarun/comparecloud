@@ -11,9 +11,11 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "format": "prettier --write src/**/*.ts src/**/*.tsx",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write src/**/*.ts && prettier --write src/**/*.tsx",
-    "build": "webpack"
+    "check-format": "prettier-check src/**/*.ts src/**/*.tsx",
+    "test": "npm run typecheck && npm run check-format && npm run build"
   },
   "devDependencies": {
     "@types/react": "^16.4.13",
@@ -22,6 +24,7 @@
     "html-webpack-plugin": "^3.2.0",
     "prerender-loader": "^1.1.0",
     "prettier": "^1.14.2",
+    "prettier-check": "^2.0.0",
     "ts-loader": "^4.5.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3",

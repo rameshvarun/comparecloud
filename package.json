@@ -10,8 +10,8 @@
     "react-dom": "^16.4.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack",
+    "start": "webpack-dev-server --open --env development",
+    "build": "rm -rf dist/ && webpack --env production",
     "format": "prettier --write src/**/*.ts src/**/*.tsx",
     "typecheck": "tsc --noEmit",
     "check-format": "prettier-check src/**/*.ts src/**/*.tsx",
@@ -28,8 +28,9 @@
     "ts-loader": "^4.5.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3",
-    "webpack": "^4.17.1",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.7"
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
   }
 }

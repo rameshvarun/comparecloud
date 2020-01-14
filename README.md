@@ -1,4 +1,4 @@
-# comparecloud.io [![Build Status](https://travis-ci.org/rameshvarun/comparecloud.io.svg?branch=master)](https://travis-ci.org/rameshvarun/comparecloud.io)
+# comparecloud.io [![Build Status](https://travis-ci.org/rameshvarun/comparecloud.svg?branch=master)](https://travis-ci.org/rameshvarun/comparecloud)
 
 ![screenshot](https://i.imgur.com/06FDEqs.png)
 
@@ -7,8 +7,8 @@
 First, get a copy of the repo and dependencies.
 
 ```bash
-git clone git@github.com:rameshvarun/comparecloud.io.git
-cd comparecloud.io
+git clone git@github.com:rameshvarun/comparecloud.git
+cd comparecloud
 npm install
 
 # Start a live-reloading server.

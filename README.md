@@ -1,7 +1,7 @@
 # comparecloud
 [![Node.js CI](https://github.com/rameshvarun/comparecloud/actions/workflows/node.js.yml/badge.svg)](https://github.com/rameshvarun/comparecloud/actions/workflows/node.js.yml)
 
-![screenshot](https://i.imgur.com/06FDEqs.png)
+![screenshot](./screenshot.png)
 
 ## Contributing
 

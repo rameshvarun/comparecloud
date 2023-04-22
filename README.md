@@ -1,4 +1,5 @@
-# comparecloud [![Build Status](https://travis-ci.org/rameshvarun/comparecloud.svg?branch=master)](https://travis-ci.org/rameshvarun/comparecloud)
+# comparecloud
+[![Node.js CI](https://github.com/rameshvarun/comparecloud/actions/workflows/node.js.yml/badge.svg)](https://github.com/rameshvarun/comparecloud/actions/workflows/node.js.yml)
 
 ![screenshot](https://i.imgur.com/06FDEqs.png)
 
